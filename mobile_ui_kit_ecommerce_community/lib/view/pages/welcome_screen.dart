@@ -102,7 +102,7 @@ class WelcomeScreen extends StatelessWidget {
                     top: 157.h,
                     child: GestureDetector(
                       onTap: () {
-                        Get.toNamed('/HomePage');
+                        Get.toNamed('/AuthenticationPage');
                       },
                       child: SizedBox(
                         width: 90.w,
