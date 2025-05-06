@@ -13,7 +13,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.4
-
+  flutter_svg: ^2.0.7
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -31,6 +31,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/icons/
   fonts:
 
     - family: Brandon Grotesque
