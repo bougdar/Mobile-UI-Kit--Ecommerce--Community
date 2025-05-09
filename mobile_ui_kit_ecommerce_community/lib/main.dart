@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
-          initialRoute: '/WelcomeScreen',
+          initialRoute: '/AddtobasketPage',
           getPages: AppRoutes.routes,
         );
       },
