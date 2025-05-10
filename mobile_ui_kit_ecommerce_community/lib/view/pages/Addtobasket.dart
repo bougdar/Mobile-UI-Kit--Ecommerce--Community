@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class AddtobasketPage extends StatelessWidget {
   const AddtobasketPage({super.key});
@@ -266,51 +267,56 @@ class AddtobasketPage extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      Container(
-                        width: 219,
-                        height: 56,
-                        decoration: ShapeDecoration(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/OrderComplete');
+                        },
+                        child: Container(
+                          width: 219,
+                          height: 56,
+                          decoration: ShapeDecoration(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                           ),
-                        ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              child: Container(
-                                width: 219,
-                                height: 56,
-                                decoration: ShapeDecoration(
-                                  color: const Color(0xFFFFA451),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Container(
+                                  width: 219,
+                                  height: 56,
+                                  decoration: ShapeDecoration(
+                                    color: const Color(0xFFFFA451),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Positioned(
-                              left: 58,
-                              top: 14,
-                              child: SizedBox(
-                                width: 103,
-                                height: 28,
-                                child: Text(
-                                  'Add to basket',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontFamily: 'Brandon Grotesque',
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.50,
-                                    letterSpacing: -0.16,
+                              Positioned(
+                                left: 58,
+                                top: 14,
+                                child: SizedBox(
+                                  width: 103,
+                                  height: 28,
+                                  child: Text(
+                                    'Add to basket',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontFamily: 'Brandon Grotesque',
+                                      fontWeight: FontWeight.w500,
+                                      height: 1.50,
+                                      letterSpacing: -0.16,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       )
                     ],
