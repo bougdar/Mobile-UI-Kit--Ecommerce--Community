@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,47 +28,52 @@ class HomePage extends StatelessWidget {
               Container(
                 width: 41.w,
                 height: 42.h,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      left: 9.w,
-                      top: 0,
-                      child: Container(
-                        width: 24.w,
-                        height: 24.h,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color(0x33000000),
-                              blurRadius: 60,
-                              offset: Offset(0, 30),
-                              spreadRadius: 0,
-                            )
-                          ],
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/icons/Vector.svg',
+                child: GestureDetector(
+                  onTap: () {
+                    Get.toNamed('/OrderList');
+                  },
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 9.w,
+                        top: 0,
+                        child: Container(
                           width: 24.w,
                           height: 24.h,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0x33000000),
+                                blurRadius: 60,
+                                offset: Offset(0, 30),
+                                spreadRadius: 0,
+                              )
+                            ],
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/icons/Vector.svg',
+                            width: 24.w,
+                            height: 24.h,
+                          ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      left: 0,
-                      top: 27.h,
-                      child: Text(
-                        'My basket',
-                        style: TextStyle(
-                          color: Color(0xFF27214D),
-                          fontSize: 10,
-                          fontFamily: 'Brandon Grotesque',
-                          fontWeight: FontWeight.w400,
-                          height: 1.50,
+                      Positioned(
+                        left: 0,
+                        top: 27.h,
+                        child: Text(
+                          'My basket',
+                          style: TextStyle(
+                            color: Color(0xFF27214D),
+                            fontSize: 10,
+                            fontFamily: 'Brandon Grotesque',
+                            fontWeight: FontWeight.w400,
+                            height: 1.50,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
