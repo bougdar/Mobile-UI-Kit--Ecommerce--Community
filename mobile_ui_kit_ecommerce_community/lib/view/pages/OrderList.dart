@@ -355,51 +355,243 @@ class OrderList extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Container(
-                          width: 199.w,
-                          height: 56.h,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: Container(
-                                  width: 199.w,
-                                  height: 56.h,
+                        GestureDetector(
+                          onTap: () {
+                            showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return Container(
+                                  width: 375.w,
+                                  height: 406.h,
+                                  padding: const EdgeInsets.all(16),
                                   decoration: ShapeDecoration(
-                                    color: const Color(0xFFFFA451),
+                                    color: Colors.white,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(24),
+                                        topRight: Radius.circular(24),
+                                      ),
+                                    ),
+                                  ),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(bottom: 16.h),
+                                          width: 327.w,
+                                          height: 101.h,
+                                          decoration: ShapeDecoration(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                          ),
+                                          child: Stack(
+                                            children: [
+                                              Positioned(
+                                                left: 0,
+                                                top: 0,
+                                                child: Text(
+                                                  'Delivery address',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF27214D),
+                                                    fontSize: 20,
+                                                    fontFamily:
+                                                        'Brandon Grotesque',
+                                                    fontWeight: FontWeight.w500,
+                                                    letterSpacing: -0.20,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 0,
+                                                top: 45.h,
+                                                child: Container(
+                                                  width: 327.w,
+                                                  height: 56.h,
+                                                  decoration: ShapeDecoration(
+                                                    color: Color(0xFFF3F1F1),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 24.w,
+                                                top: 58.h,
+                                                child: Text(
+                                                  '10th avenue, Lekki, Lagos State',
+                                                  style: TextStyle(
+                                                    color: Color(0xFFC2BCBC),
+                                                    fontSize: 20,
+                                                    fontFamily:
+                                                        'Brandon Grotesque',
+                                                    fontWeight: FontWeight.w400,
+                                                    letterSpacing: -0.20,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                        // Contact number
+                                        Container(
+                                          width: 327.w,
+                                          height: 101.h,
+                                          decoration: ShapeDecoration(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                          ),
+                                          child: Stack(
+                                            children: [
+                                              Positioned(
+                                                left: 0,
+                                                top: 0,
+                                                child: Text(
+                                                  'Number we can call',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF27214D),
+                                                    fontSize: 20,
+                                                    fontFamily:
+                                                        'Brandon Grotesque',
+                                                    fontWeight: FontWeight.w500,
+                                                    letterSpacing: -0.20,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 0,
+                                                top: 45.h,
+                                                child: Container(
+                                                  width: 327.w,
+                                                  height: 56.h,
+                                                  decoration: ShapeDecoration(
+                                                    color: Color(0xFFF3F1F1),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.w),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 24.w,
+                                                top: 58.h,
+                                                child: Text(
+                                                  '09090605708',
+                                                  style: TextStyle(
+                                                    color: Color(0xFFC2BCBC),
+                                                    fontSize: 20,
+                                                    fontFamily:
+                                                        'Brandon Grotesque',
+                                                    fontWeight: FontWeight.w400,
+                                                    letterSpacing: -0.20,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        // Pay on delivery
+                                        GestureDetector(
+                                          onTap: () {
+                                            Get.toNamed('/OrderComplete');
+                                          },
+                                          child: Container(
+                                            margin: EdgeInsets.only(bottom: 16.h),
+                                            padding: const EdgeInsets.all(16),
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: ShapeDecoration(
+                                              shape: RoundedRectangleBorder(
+                                                side: BorderSide(
+                                                    width: 1,
+                                                    color: Color(0xFFFFA451)),
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  'Pay on delivery',
+                                                  style: TextStyle(
+                                                    color: Color(0xFFFFA451),
+                                                    fontSize: 16,
+                                                    fontFamily:
+                                                        'Brandon Grotesque',
+                                                    fontWeight: FontWeight.w500,
+                                                    height: 1.5,
+                                                    letterSpacing: -0.16,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          child: Container(
+                            width: 199.w,
+                            height: 56.h,
+                            decoration: ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  left: 0,
+                                  top: 0,
+                                  child: Container(
+                                    width: 199.w,
+                                    height: 56.h,
+                                    decoration: ShapeDecoration(
+                                      color: const Color(0xFFFFA451),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Positioned(
-                                left: 52.70.w,
-                                top: 14.h,
-                                child: SizedBox(
-                                  width: 93.59.w,
-                                  height: 28.h,
-                                  child: Text(
-                                    'Checkout',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontFamily: 'Brandon Grotesque',
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.50,
-                                      letterSpacing: -0.16,
+                                Positioned(
+                                  left: 52.70.w,
+                                  top: 14.h,
+                                  child: SizedBox(
+                                    width: 93.59.w,
+                                    height: 28.h,
+                                    child: Text(
+                                      'Checkout',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontFamily: 'Brandon Grotesque',
+                                        fontWeight: FontWeight.w500,
+                                        height: 1.50,
+                                        letterSpacing: -0.16,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         )
                       ],
@@ -407,7 +599,7 @@ class OrderList extends StatelessWidget {
                   ),
                   SizedBox(
                     height: 10.h,
-                  )
+                  ),
                 ],
               ),
             ),
