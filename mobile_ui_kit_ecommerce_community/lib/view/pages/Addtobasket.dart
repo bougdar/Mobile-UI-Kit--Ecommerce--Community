@@ -8,6 +8,7 @@ class AddtobasketPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String? id = Get.parameters['id'];
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -126,7 +127,7 @@ class AddtobasketPage extends StatelessWidget {
                   SizedBox(height: 45.h),
 
                   Text(
-                    'Quinoa Fruit Salad',
+                    'Quinoa Fruit Salad $id',
                     style: TextStyle(
                       color: const Color(0xFF27214D),
                       fontSize: 32,

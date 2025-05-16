@@ -6,9 +6,11 @@ import 'package:mobile_ui_kit_ecommerce_community/view/pages/OrderList.dart';
 import 'package:mobile_ui_kit_ecommerce_community/view/pages/home.dart';
 import 'package:mobile_ui_kit_ecommerce_community/view/pages/welcome_screen.dart';
 
+import '../binding/product_binding.dart';
+
 class AppRoutes {
   static final routes = [
-    GetPage(name: '/HomePage', page: () => const HomePage()),
+    GetPage(name: '/HomePage', page: () => const HomePage(),binding: ProductBinding(),),
     GetPage(name: '/WelcomeScreen', page: () => const WelcomeScreen()),
     GetPage(name: '/AuthenticationPage', page: () => const AuthenticationPage()),
     GetPage(name: '/AddtobasketPage', page: () => const AddtobasketPage()),

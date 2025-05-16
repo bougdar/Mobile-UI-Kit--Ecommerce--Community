@@ -3,11 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../controllers/product_controller.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final ProductController controller = Get.find<ProductController>();
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -578,522 +582,102 @@ class HomePage extends StatelessWidget {
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 24.w),
-                      width: 176.w,
-                      height: 183.h,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 152.w,
-                              height: 183.h,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFFFF9EA),
-                                borderRadius: BorderRadius.circular(16.w),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 16.w,
-                            top: 110.h,
-                            child: Text(
-                              'Honey lime combo',
-                              style: TextStyle(
-                                color: const Color(0xFF27214D),
-                                fontSize: 16,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: -0.16,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 17.w,
-                            top: 143.h,
-                            child: Text(
-                              '2,000 Dinar',
-                              style: TextStyle(
-                                color: const Color(0xFFF08626),
-                                fontSize: 14,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.14,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 112.w,
-                            top: 141.h,
-                            child: Container(
-                              width: 24.w,
-                              height: 24.h,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFFFFF2E6),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100),
+                child: Obx(() => Row(
+                      children: controller.products.map((product) {
+                        return GestureDetector(
+                          onTap: () {
+                            Get.toNamed('/AddtobasketPage', parameters: {'id': product.id.toString()});
+                          },
+                          child: Container(
+                            padding: EdgeInsets.only(left: 24.w),
+                            width: 176.w,
+                            height: 183.h,
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  left: 0,
+                                  top: 0,
+                                  child: Container(
+                                    width: 152.w,
+                                    height: 183.h,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFFFF9EA),
+                                      borderRadius: BorderRadius.circular(16.w),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.add,
-                                  size: 16,
-                                  color: Color(0xFFFFA451),
+                                Positioned(
+                                  left: 16.w,
+                                  top: 110.h,
+                                  child: Text(
+                                    product
+                                        .name, // replace with product.name dynamically
+                                    style: TextStyle(
+                                      color: const Color(0xFF27214D),
+                                      fontSize: 16,
+                                      fontFamily: 'Brandon Grotesque',
+                                      fontWeight: FontWeight.w500,
+                                      letterSpacing: -0.16,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 36.w,
-                            top: 22.h,
-                            child: Container(
-                              width: 80.w,
-                              height: 80.h,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/Honey-Lime-Peach-Fruit-Salad-3-725x725-1-removebg-preview 1.png"),
-                                  fit: BoxFit.cover,
+                                Positioned(
+                                  left: 17.w,
+                                  top: 143.h,
+                                  child: Text(
+                                    '${product.price} Dinar', // replace with product.price dynamically
+                                    style: TextStyle(
+                                      color: const Color(0xFFF08626),
+                                      fontSize: 14,
+                                      fontFamily: 'Brandon Grotesque',
+                                      fontWeight: FontWeight.w400,
+                                      letterSpacing: -0.14,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 24.w),
-                      width: 176.w,
-                      height: 183.h,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 152.w,
-                              height: 183.h,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFF1EFF6),
-                                borderRadius: BorderRadius.circular(16.w),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 16.w,
-                            top: 110.h,
-                            child: Text(
-                              'Honey lime combo',
-                              style: TextStyle(
-                                color: const Color(0xFF27214D),
-                                fontSize: 16,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: -0.16,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 17.w,
-                            top: 143.h,
-                            child: Text(
-                              '2,000 Dinar',
-                              style: TextStyle(
-                                color: const Color(0xFFF08626),
-                                fontSize: 14,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.14,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 112.w,
-                            top: 141.h,
-                            child: Container(
-                              width: 24.w,
-                              height: 24.h,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFFFFF2E6),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100),
+                                Positioned(
+                                  left: 112.w,
+                                  top: 141.h,
+                                  child: Container(
+                                    width: 24.w,
+                                    height: 24.h,
+                                    decoration: ShapeDecoration(
+                                      color: const Color(0xFFFFF2E6),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.add,
+                                        size: 16,
+                                        color: Color(0xFFFFA451),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.add,
-                                  size: 16,
-                                  color: const Color(0xFFF1EFF6),
+                                Positioned(
+                                  left: 36.w,
+                                  top: 22.h,
+                                  child: Container(
+                                    width: 80.w,
+                                    height: 80.h,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(product.image),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
                           ),
-                          Positioned(
-                            left: 36.w,
-                            top: 22.h,
-                            child: Container(
-                              width: 80.w,
-                              height: 80.h,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/Honey-Lime-Peach-Fruit-Salad-3-725x725-1-removebg-preview 1.png"),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 24.w),
-                      width: 176.w,
-                      height: 183.h,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 152.w,
-                              height: 183.h,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFFFF9EA),
-                                borderRadius: BorderRadius.circular(16.w),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 16.w,
-                            top: 110.h,
-                            child: Text(
-                              'Honey lime combo',
-                              style: TextStyle(
-                                color: const Color(0xFF27214D),
-                                fontSize: 16,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: -0.16,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 17.w,
-                            top: 143.h,
-                            child: Text(
-                              '2,000 Dinar',
-                              style: TextStyle(
-                                color: const Color(0xFFF08626),
-                                fontSize: 14,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.14,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 112.w,
-                            top: 141.h,
-                            child: Container(
-                              width: 24.w,
-                              height: 24.h,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFFFFF2E6),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.add,
-                                  size: 16,
-                                  color: Color(0xFFFFA451),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 36.w,
-                            top: 22.h,
-                            child: Container(
-                              width: 80.w,
-                              height: 80.h,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/Honey-Lime-Peach-Fruit-Salad-3-725x725-1-removebg-preview 1.png"),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 24.w),
-                      width: 176.w,
-                      height: 183.h,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 152.w,
-                              height: 183.h,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFFFF9EA),
-                                borderRadius: BorderRadius.circular(16.w),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 16.w,
-                            top: 110.h,
-                            child: Text(
-                              'Honey lime combo',
-                              style: TextStyle(
-                                color: const Color(0xFF27214D),
-                                fontSize: 16,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: -0.16,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 17.w,
-                            top: 143.h,
-                            child: Text(
-                              '2,000 Dinar',
-                              style: TextStyle(
-                                color: const Color(0xFFF08626),
-                                fontSize: 14,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.14,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 112.w,
-                            top: 141.h,
-                            child: Container(
-                              width: 24.w,
-                              height: 24.h,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFFFFF2E6),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.add,
-                                  size: 16,
-                                  color: const Color(0xFFF1EFF6),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 36.w,
-                            top: 22.h,
-                            child: Container(
-                              width: 80.w,
-                              height: 80.h,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/Honey-Lime-Peach-Fruit-Salad-3-725x725-1-removebg-preview 1.png"),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 24.w),
-                      width: 176.w,
-                      height: 183.h,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 152.w,
-                              height: 183.h,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFFFF9EA),
-                                borderRadius: BorderRadius.circular(16.w),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 16.w,
-                            top: 110.h,
-                            child: Text(
-                              'Honey lime combo',
-                              style: TextStyle(
-                                color: const Color(0xFF27214D),
-                                fontSize: 16,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: -0.16,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 17.w,
-                            top: 143.h,
-                            child: Text(
-                              '2,000 Dinar',
-                              style: TextStyle(
-                                color: const Color(0xFFF08626),
-                                fontSize: 14,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.14,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 112.w,
-                            top: 141.h,
-                            child: Container(
-                              width: 24.w,
-                              height: 24.h,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFFFFF2E6),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.add,
-                                  size: 16,
-                                  color: Color(0xFFFFA451),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 36.w,
-                            top: 22.h,
-                            child: Container(
-                              width: 80.w,
-                              height: 80.h,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/Honey-Lime-Peach-Fruit-Salad-3-725x725-1-removebg-preview 1.png"),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 24.w),
-                      width: 176.w,
-                      height: 183.h,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 152.w,
-                              height: 183.h,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFFFF9EA),
-                                borderRadius: BorderRadius.circular(16.w),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 16.w,
-                            top: 110.h,
-                            child: Text(
-                              'Honey lime combo',
-                              style: TextStyle(
-                                color: const Color(0xFF27214D),
-                                fontSize: 16,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: -0.16,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 17.w,
-                            top: 143.h,
-                            child: Text(
-                              '2,000 Dinar',
-                              style: TextStyle(
-                                color: const Color(0xFFF08626),
-                                fontSize: 14,
-                                fontFamily: 'Brandon Grotesque',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.14,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 112.w,
-                            top: 141.h,
-                            child: Container(
-                              width: 24.w,
-                              height: 24.h,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFFFFF2E6),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.add,
-                                  size: 16,
-                                  color:
-                                      const Color.fromARGB(255, 203, 183, 252),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 36.w,
-                            top: 22.h,
-                            child: Container(
-                              width: 80.w,
-                              height: 80.h,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/Honey-Lime-Peach-Fruit-Salad-3-725x725-1-removebg-preview 1.png"),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+                        );
+                      }).toList(),
+                    )),
+              )
             ],
           ),
         ));
