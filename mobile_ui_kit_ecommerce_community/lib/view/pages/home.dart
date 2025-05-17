@@ -611,7 +611,7 @@ class HomePage extends StatelessWidget {
                                   top: 110.h,
                                   child: Text(
                                     product
-                                        .name, // replace with product.name dynamically
+                                        .name, 
                                     style: TextStyle(
                                       color: const Color(0xFF27214D),
                                       fontSize: 16,
@@ -625,7 +625,7 @@ class HomePage extends StatelessWidget {
                                   left: 17.w,
                                   top: 143.h,
                                   child: Text(
-                                    '${product.price} Dinar', // replace with product.price dynamically
+                                    '${product.price} Dinar', 
                                     style: TextStyle(
                                       color: const Color(0xFFF08626),
                                       fontSize: 14,

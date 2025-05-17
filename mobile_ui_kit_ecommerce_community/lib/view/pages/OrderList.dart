@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class OrderList extends StatelessWidget {
-  const OrderList({super.key});
-
+  OrderList({super.key});
+  final box = GetStorage();
   @override
   Widget build(BuildContext context) {
+    final List<dynamic> basket = box.read('basket') ?? [];
+
     return Scaffold(
       body: Container(
         color: const Color(0xFFFFA451),
@@ -216,101 +219,6 @@ class OrderList extends StatelessWidget {
                   SizedBox(
                     height: 30,
                   ),
-                  Container(
-                    width: 375.w,
-                    height: 80.h,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 24.w,
-                          top: 0,
-                          child: Container(
-                            width: 65.w,
-                            height: 64.w,
-                            decoration: ShapeDecoration(
-                              color: const Color(0xFFFFFAEB),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 105.w,
-                          top: 9.h,
-                          child: Text(
-                            'Quinoa fruit salad',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontFamily: 'Brandon Grotesque',
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: -0.16,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 105.w,
-                          top: 36.h,
-                          child: Text(
-                            '2packs',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontFamily: 'Brandon Grotesque',
-                              fontWeight: FontWeight.w400,
-                              letterSpacing: -0.14,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 299.w,
-                          top: 21.h,
-                          child: Text(
-                            '20,000',
-                            style: TextStyle(
-                              color: const Color(0xFF27214D),
-                              fontSize: 16,
-                              fontFamily: 'Brandon Grotesque',
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: -0.16,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 0,
-                          top: 80.h,
-                          child: Container(
-                            width: 375.w,
-                            decoration: ShapeDecoration(
-                              shape: RoundedRectangleBorder(
-                                side: BorderSide(
-                                  width: 1,
-                                  strokeAlign: BorderSide.strokeAlignCenter,
-                                  color: const Color(0xFFF4F4F4),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 37.w,
-                          top: 12.h,
-                          child: Container(
-                            width: 40.w,
-                            height: 40.h,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                    "assets/images/Honey-Lime-Peach-Fruit-Salad-3-725x725-1-removebg-preview 1.png"),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   Spacer(),
                   Padding(
                     padding: EdgeInsets.only(left: 24.w, right: 24.w),
@@ -509,7 +417,8 @@ class OrderList extends StatelessWidget {
                                             Get.toNamed('/OrderComplete');
                                           },
                                           child: Container(
-                                            margin: EdgeInsets.only(bottom: 16.h),
+                                            margin:
+                                                EdgeInsets.only(bottom: 16.h),
                                             padding: const EdgeInsets.all(16),
                                             clipBehavior: Clip.antiAlias,
                                             decoration: ShapeDecoration(
