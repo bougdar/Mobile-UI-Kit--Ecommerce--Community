@@ -1,16 +1,35 @@
-# mobile_ui_kit_ecommerce_community
+# Mobile UI Kit: Ecommerce (Flutter)
 
-A new Flutter project.
+[Figma design](https://www.figma.com/community/file/875021148028188871).
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Preview
 
-A few resources to get you started if this is your first Flutter project:
+> 📲 Below is the original design reference that inspired this Flutter implementation:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Design Preview](./assets/images/Frame.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 📸 Screenshots
+
+| Screen 1 | Screen 2 | Screen 3 | Screen 4 | Screen 5 | Screen 6 | Screen 7 |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| ![Screen 1](./assets/images/1.jpg) | ![Screen 2](./assets/images/2.jpg) | ![Screen 3](./assets/images/3.jpg) | ![Screen 4](./assets/images/4.jpg) | ![Screen 5](./assets/images/5.jpg) | ![Screen 6](./assets/images/6.jpg) | ![Screen 7](./assets/images/7.jpg) |
+
+
+---
+
+## 📦 Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/bougdar/Mobile-UI-Kit--Ecommerce--Community.git
+cd Mobile-UI-Kit--Ecommerce--Community
+
+# 2. Install dependencies
+flutter pub get
+
+# 3. Run the app
+flutter run

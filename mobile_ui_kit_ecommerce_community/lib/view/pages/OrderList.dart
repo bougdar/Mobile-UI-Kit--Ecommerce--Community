@@ -144,7 +144,7 @@ class OrderList extends StatelessWidget {
                           left: 105.w,
                           top: 9.h,
                           child: Text(
-                            'Quinoa fruit salad',
+                            'Kaftaji',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -172,7 +172,7 @@ class OrderList extends StatelessWidget {
                           left: 299.w,
                           top: 21.h,
                           child: Text(
-                            '20,000',
+                            '5,00',
                             style: TextStyle(
                               color: const Color(0xFF27214D),
                               fontSize: 16,
@@ -234,7 +234,7 @@ class OrderList extends StatelessWidget {
                                 left: 0.w,
                                 top: 24.h,
                                 child: Text(
-                                  '60,000',
+                                  '10,00',
                                   style: TextStyle(
                                     color: const Color(0xFF27214D),
                                     fontSize: 24,
